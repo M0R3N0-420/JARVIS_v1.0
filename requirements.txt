@@ -1,0 +1,27 @@
+# Dependencias del Asistente de Voz JARVIS
+
+# Audio
+sounddevice>=0.4.6
+scipy>=1.11.0
+
+# Speech-to-Text
+openai-whisper>=20230314
+
+# Text-to-Speech
+pyttsx3>=2.90
+
+# IA / LLM
+ollama>=0.1.0
+
+# Utilidades
+numpy>=1.24.0
+keyboard>=0.13.5
+
+# Base de datos (SQLite viene incluido en Python)
+# Para PostgreSQL (opcional):
+# psycopg2-binary>=2.9.0
+
+# Análisis y visualización (opcional)
+# matplotlib>=3.7.0
+# pandas>=2.0.0
+# plotly>=5.14.0

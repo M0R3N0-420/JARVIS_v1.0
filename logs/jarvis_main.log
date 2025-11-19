@@ -1,0 +1,18 @@
+2025-11-19 18:40:55 | jarvis_main | INFO | ============================================================
+2025-11-19 18:40:55 | jarvis_main | INFO | Sistema de logging inicializado
+2025-11-19 18:40:55 | jarvis_main | INFO | ============================================================
+2025-11-19 18:40:55 | jarvis_main | INFO | 🚀 Sesión de JARVIS iniciada
+2025-11-19 18:40:57 | jarvis_main | INFO | 💾 Base de datos inicializada: data/jarvis.db
+2025-11-19 18:40:57 | jarvis_main | INFO | 📊 Nueva sesión creada: ID 1
+2025-11-19 18:40:58 | jarvis_main | INFO | 📦 Modelo Whisper cargado: small (tiempo: 1.71s)
+2025-11-19 18:40:59 | jarvis_main | INFO | ⚙️ Preferencia guardada: user_name = Usuario
+2025-11-19 18:40:59 | jarvis_main | INFO | ⚙️ Preferencia guardada: tts_rate = 180
+2025-11-19 18:40:59 | jarvis_main | INFO | ⚙️ Preferencia guardada: favorite_topics = ["general"]
+2025-11-19 18:41:29 | jarvis_main | INFO | 💬 INTERACCIÓN [AI]: Usuario: 'Hola Hola Hola, ¿Cómo estás?...' | Respuesta: 'Estoy funcionando a pleno rend...' | Duración: 29.45s
+2025-11-19 18:43:05 | jarvis_main | INFO | 💬 INTERACCIÓN [COMMAND]: Usuario: 'Hola, reproduce música 1....' | Respuesta: 'Abriendo Youtube....' | Duración: 95.73s
+2025-11-19 18:43:22 | jarvis_main | INFO | 💬 INTERACCIÓN [COMMAND]: Usuario: 'hola dame la hora...' | Respuesta: 'Son las 18:43....' | Duración: 15.80s
+2025-11-19 18:44:56 | jarvis_main | INFO | 📊 Sesión 1 finalizada
+2025-11-19 18:44:56 | jarvis_main | INFO | 💾 Backup creado: backups/jarvis_backup_20251119_184456.db
+2025-11-19 18:44:56 | jarvis_main | INFO | 💾 Conexión a base de datos cerrada
+2025-11-19 18:44:56 | jarvis_main | INFO | 🏁 Sesión finalizada. Total de interacciones: 3
+2025-11-19 18:44:56 | jarvis_main | INFO | 📊 Datos de sesión guardados en: logs\session_20251119_184055.json
