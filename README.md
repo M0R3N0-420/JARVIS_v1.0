@@ -42,10 +42,13 @@ jarvis_assistant/
 │   └── rec.wav                  # Audio temporal
 │
 ├── logs/
-│   ├── jarvis_main.log
-│   ├── conversations.log
-│   ├── errors.log
-│   └── session_*.json
+│   ├── jarvis_main.log          # Log principal
+│   ├── conversations.log        # Conversaciones completas
+│   ├── commands.log             # Comandos ejecutados
+│   ├── errors.log               # Solo errores
+│   └── sessions/                # Sesiones en JSON
+│       ├── session_20241120_080000.json
+│       └── session_20241120_143000.json
 │
 └── backups/
     └── jarvis_backup_*.db

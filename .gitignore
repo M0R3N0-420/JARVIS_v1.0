@@ -1,5 +1,5 @@
 __pycache__/
 *.pyc
-logs/
+logs/sessions/*.log
 backups/
 sessions_*.json

@@ -13,26 +13,32 @@ class LogAnalyzer:
     
     def __init__(self, log_dir="logs"):
         self.log_dir = log_dir
+        self.sessions_dir = os.path.join(log_dir, "sessions")
         self.sessions = []
         self._load_sessions()
     
     def _load_sessions(self):
         """Carga todas las sesiones disponibles"""
-        if not os.path.exists(self.log_dir):
-            print(f"⚠️ Directorio de logs no encontrado: {self.log_dir}")
+        if not os.path.exists(self.sessions_dir):
+            print(f"⚠️ Directorio de sesiones no encontrado: {self.sessions_dir}")
+            print(f"💡 Creando directorio...")
+            os.makedirs(self.sessions_dir, exist_ok=True)
             return
         
-        for filename in os.listdir(self.log_dir):
+        for filename in os.listdir(self.sessions_dir):
             if filename.startswith("session_") and filename.endswith(".json"):
-                filepath = os.path.join(self.log_dir, filename)
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    session = json.load(f)
-                    session['filename'] = filename
-                    self.sessions.append(session)
+                filepath = os.path.join(self.sessions_dir, filename)
+                try:
+                    with open(filepath, 'r', encoding='utf-8') as f:
+                        session = json.load(f)
+                        session['filename'] = filename
+                        self.sessions.append(session)
+                except Exception as e:
+                    print(f"⚠️ Error cargando {filename}: {e}")
         
         # Ordenar por fecha
         self.sessions.sort(key=lambda x: x.get('start_time', ''), reverse=True)
-        print(f"📊 {len(self.sessions)} sesiones cargadas.\n")
+        print(f"📊 {len(self.sessions)} sesiones cargadas desde {self.sessions_dir}\n")
     
     def list_sessions(self):
         """Lista todas las sesiones disponibles"""

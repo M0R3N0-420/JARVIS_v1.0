@@ -25,6 +25,10 @@ class JarvisLogger:
         # Crear directorio de logs si no existe
         os.makedirs(self.log_dir, exist_ok=True)
         
+        # Crear subdirectorio para sesiones
+        self.sessions_dir = os.path.join(self.log_dir, "sessions")
+        os.makedirs(self.sessions_dir, exist_ok=True)
+        
         # Configurar loggers
         self.main_logger = self._setup_logger(
             "jarvis_main",
@@ -47,9 +51,9 @@ class JarvisLogger:
             os.path.join(self.log_dir, "commands.log")
         )
         
-        # Archivo de sesión actual
+        # Archivo de sesión actual (ahora en subcarpeta)
         self.session_file = os.path.join(
-            self.log_dir,
+            self.sessions_dir,
             f"session_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         )
         self.session_data = {
@@ -59,6 +63,7 @@ class JarvisLogger:
         
         self.main_logger.info("=" * 60)
         self.main_logger.info("Sistema de logging inicializado")
+        self.main_logger.info(f"Sesión guardada en: {self.session_file}")
         self.main_logger.info("=" * 60)
     
     def _setup_logger(self, name, log_file, level=None):
@@ -120,20 +125,46 @@ class JarvisLogger:
         """Registra transcripciones de audio"""
         self.main_logger.info(f"📝 Transcripción completada en {duration:.2f}s" if duration else "📝 Transcripción completada")
         # Registrar en archivo de conversaciones
+        self.conversation_logger.info(f"")
         self.conversation_logger.info(f"--- TRANSCRIPCIÓN ---")
         self.conversation_logger.info(f"Archivo: {audio_file}")
-        self.conversation_logger.info(f"Usuario: {transcribed_text}")
+        self.conversation_logger.info(f"👤 Usuario dijo: {transcribed_text}")
         if duration:
             self.conversation_logger.info(f"Duración transcripción: {duration:.2f}s")
     
     def log_command_execution(self, command_keyword, action, result):
         """Registra ejecución de comandos del sistema"""
-        self.command_logger.info(f"⚙️ COMANDO: '{command_keyword}' | ACCIÓN: {action} | RESULTADO: {result}")
+        # Log en archivo principal
         self.main_logger.info(f"⚙️ Comando ejecutado: {command_keyword}")
+        
+        # Log detallado en archivo de comandos
+        self.command_logger.info(f"")
+        self.command_logger.info(f"========================================")
+        self.command_logger.info(f"⚙️  COMANDO: '{command_keyword}'")
+        self.command_logger.info(f"🔧 ACCIÓN: {action}")
+        self.command_logger.info(f"✅ RESULTADO: {result}")
+        self.command_logger.info(f"========================================")
+        
+        # También registrar en conversaciones
+        self.conversation_logger.info(f"")
+        self.conversation_logger.info(f"⚙️  Comando ejecutado: {command_keyword}")
+        self.conversation_logger.info(f"✅ {result}")
     
     def log_ai_response(self, user_input, ai_response, model_name, response_time=None):
         """Registra interacciones con el modelo de IA"""
-        self.conversation_logger.info(f"AI RESPONSE ({model_name}): {ai_response}")
+        # Log en archivo de conversaciones (detallado)
+        self.conversation_logger.info(f"")
+        self.conversation_logger.info(f"========================================")
+        self.conversation_logger.info(f"👤 Usuario preguntó: {user_input}")
+        self.conversation_logger.info(f"")
+        self.conversation_logger.info(f"🤖 Asistente ({model_name}) respondió:")
+        self.conversation_logger.info(f"{ai_response}")
+        if response_time:
+            self.conversation_logger.info(f"")
+            self.conversation_logger.info(f"⏱️  Tiempo de respuesta: {response_time:.2f}s")
+        self.conversation_logger.info(f"========================================")
+        
+        # Log resumido en archivo principal
         if response_time:
             self.main_logger.info(f"🤖 Respuesta IA generada en {response_time:.2f}s")
     
@@ -190,6 +221,15 @@ class JarvisLogger:
         
         self.session_data["interactions"].append(interaction)
         
+        # Log en archivo de conversaciones (formato legible)
+        self.conversation_logger.info(f"\n{'='*60}")
+        self.conversation_logger.info(f"NUEVA INTERACCIÓN [{response_type.upper()}]")
+        self.conversation_logger.info(f"Timestamp: {interaction['timestamp']}")
+        if duration:
+            self.conversation_logger.info(f"Duración total: {duration:.2f}s")
+        self.conversation_logger.info(f"{'='*60}\n")
+        
+        # Log en archivo principal
         log_msg = f"💬 INTERACCIÓN [{response_type.upper()}]: Usuario: '{user_input[:30]}...' | Respuesta: '{response[:30]}...'"
         if duration:
             log_msg += f" | Duración: {duration:.2f}s"

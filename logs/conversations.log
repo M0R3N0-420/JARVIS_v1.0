@@ -4,3 +4,51 @@
 2025-11-19 19:06:53 | jarvis_conversation | INFO | Duración transcripción: 2.50s
 2025-11-19 19:06:53 | jarvis_conversation | INFO | AI RESPONSE (llama3.1:8b): ¡Hola! Estoy funcionando correctamente. Este es un mensaje de prueba.
 2025-11-19 19:09:44 | jarvis_conversation | INFO | AI RESPONSE (llama3.1:8b): Claro, un cálculo simple. La respuesta a 3 dividido por 1 es 3. El resultado de una división en la que el divisor es 1 siempre será igual al dividendio.
+2025-11-20 07:33:41 | jarvis_conversation | INFO | --- TRANSCRIPCIÓN ---
+2025-11-20 07:33:41 | jarvis_conversation | INFO | Archivo: test_audio.wav
+2025-11-20 07:33:41 | jarvis_conversation | INFO | Usuario: Hola JARVIS, esta es una prueba
+2025-11-20 07:33:41 | jarvis_conversation | INFO | Duración transcripción: 2.50s
+2025-11-20 07:33:41 | jarvis_conversation | INFO | AI RESPONSE (llama3.1:8b): ¡Hola! Estoy funcionando correctamente. Este es un mensaje de prueba.
+2025-11-20 07:35:46 | jarvis_conversation | INFO | AI RESPONSE (llama3.1:8b): Buenos días, ¿en qué puedo ayudarte hoy? El clima en Medellín parece ser un poco nublado con una temperatura de 22 grados. La ciudad está tranquila y se respira la paz. ¿Quieres saber algo específico o necesitas ayuda para planificar tu día?
+2025-11-20 07:41:06 | jarvis_conversation | INFO | 
+2025-11-20 07:41:06 | jarvis_conversation | INFO | --- TRANSCRIPCIÓN ---
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Archivo: test_audio.wav
+2025-11-20 07:41:06 | jarvis_conversation | INFO | 👤 Usuario dijo: Hola JARVIS, esta es una prueba
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Duración transcripción: 2.50s
+2025-11-20 07:41:06 | jarvis_conversation | INFO | ========================================
+2025-11-20 07:41:06 | jarvis_conversation | INFO | 👤 Usuario: Hola JARVIS, esta es una prueba
+2025-11-20 07:41:06 | jarvis_conversation | INFO | 🤖 Asistente (llama3.1:8b): ¡Hola! Estoy funcionando correctamente. Este es un mensaje de prueba.
+2025-11-20 07:41:06 | jarvis_conversation | INFO | ⏱️  Tiempo de respuesta: 1.80s
+2025-11-20 07:41:06 | jarvis_conversation | INFO | ========================================
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Comando ejecutado: abrir youtube -> Abriendo YouTube.
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Comando ejecutado: dame la hora -> Son las 15:30
+2025-11-20 07:41:06 | jarvis_conversation | INFO | 
+============================================================
+2025-11-20 07:41:06 | jarvis_conversation | INFO | NUEVA INTERACCIÓN [COMMAND]
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Timestamp: 2025-11-20T07:41:06.940487
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Duración total: 3.20s
+2025-11-20 07:41:06 | jarvis_conversation | INFO | ============================================================
+
+2025-11-20 07:41:06 | jarvis_conversation | INFO | 
+============================================================
+2025-11-20 07:41:06 | jarvis_conversation | INFO | NUEVA INTERACCIÓN [AI]
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Timestamp: 2025-11-20T07:41:06.941526
+2025-11-20 07:41:06 | jarvis_conversation | INFO | Duración total: 5.70s
+2025-11-20 07:41:06 | jarvis_conversation | INFO | ============================================================
+
+2025-11-20 07:48:19 | jarvis_conversation | INFO | 
+2025-11-20 07:48:19 | jarvis_conversation | INFO | ========================================
+2025-11-20 07:48:19 | jarvis_conversation | INFO | 👤 Usuario preguntó: Hola Jarvis, ¿cómo estás?
+2025-11-20 07:48:19 | jarvis_conversation | INFO | 
+2025-11-20 07:48:19 | jarvis_conversation | INFO | 🤖 Asistente (llama3.1:8b) respondió:
+2025-11-20 07:48:19 | jarvis_conversation | INFO | Estoy funcionando a pleno rendimiento, gracias por preguntar. Estoy listo para ayudarte con cualquier cosa que necesites. ¿En qué puedo ayudarte hoy?
+2025-11-20 07:48:19 | jarvis_conversation | INFO | 
+2025-11-20 07:48:19 | jarvis_conversation | INFO | ⏱️  Tiempo de respuesta: 11.87s
+2025-11-20 07:48:19 | jarvis_conversation | INFO | ========================================
+2025-11-20 07:48:30 | jarvis_conversation | INFO | 
+============================================================
+2025-11-20 07:48:30 | jarvis_conversation | INFO | NUEVA INTERACCIÓN [AI]
+2025-11-20 07:48:30 | jarvis_conversation | INFO | Timestamp: 2025-11-20T07:48:30.461777
+2025-11-20 07:48:30 | jarvis_conversation | INFO | Duración total: 30.91s
+2025-11-20 07:48:30 | jarvis_conversation | INFO | ============================================================
+
