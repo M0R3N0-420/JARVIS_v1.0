@@ -38,16 +38,20 @@ class AIEngine:
         Returns:
             str: Respuesta del asistente
         """
+        import time
+        
         # Agregar mensaje del usuario al historial
         self.history.append({"role": "user", "content": user_message})
         
         print("🤖 Generando respuesta con IA...\n")
         
+        start_time = time.time()
         # Obtener respuesta del modelo
         response: ChatResponse = chat(
             model=self.model_name,
             messages=self.history
         )
+        response_time = time.time() - start_time
         
         assistant_message = response.message.content.strip()
         
@@ -55,6 +59,16 @@ class AIEngine:
         self.history.append({"role": "assistant", "content": assistant_message})
         
         print(f"💬 Asistente: {assistant_message}\n")
+        
+        if self.logger:
+            # Log detallado con entrada del usuario
+            self.logger.log_ai_response(
+                user_message, 
+                assistant_message, 
+                self.model_name, 
+                response_time
+            )
+        
         return assistant_message
     
     def clear_history(self, keep_system=True):

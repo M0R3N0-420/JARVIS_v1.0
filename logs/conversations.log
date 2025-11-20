@@ -1,0 +1,6 @@
+2025-11-19 19:06:53 | jarvis_conversation | INFO | --- TRANSCRIPCIÓN ---
+2025-11-19 19:06:53 | jarvis_conversation | INFO | Archivo: test_audio.wav
+2025-11-19 19:06:53 | jarvis_conversation | INFO | Usuario: Hola JARVIS, esta es una prueba
+2025-11-19 19:06:53 | jarvis_conversation | INFO | Duración transcripción: 2.50s
+2025-11-19 19:06:53 | jarvis_conversation | INFO | AI RESPONSE (llama3.1:8b): ¡Hola! Estoy funcionando correctamente. Este es un mensaje de prueba.
+2025-11-19 19:09:44 | jarvis_conversation | INFO | AI RESPONSE (llama3.1:8b): Claro, un cálculo simple. La respuesta a 3 dividido por 1 es 3. El resultado de una división en la que el divisor es 1 siempre será igual al dividendio.

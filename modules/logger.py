@@ -119,7 +119,12 @@ class JarvisLogger:
     def log_transcription(self, audio_file, transcribed_text, duration=None):
         """Registra transcripciones de audio"""
         self.main_logger.info(f"📝 Transcripción completada en {duration:.2f}s" if duration else "📝 Transcripción completada")
-        self.conversation_logger.info(f"USER INPUT: {transcribed_text}")
+        # Registrar en archivo de conversaciones
+        self.conversation_logger.info(f"--- TRANSCRIPCIÓN ---")
+        self.conversation_logger.info(f"Archivo: {audio_file}")
+        self.conversation_logger.info(f"Usuario: {transcribed_text}")
+        if duration:
+            self.conversation_logger.info(f"Duración transcripción: {duration:.2f}s")
     
     def log_command_execution(self, command_keyword, action, result):
         """Registra ejecución de comandos del sistema"""
